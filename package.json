@@ -7,6 +7,7 @@
   "main": "dist/js/vue-splide.cjs.js",
   "module": "dist/js/vue-splide.esm.js",
   "types": "src/js/index.ts",
+  "packageManager": "pnpm@9.4.0",
   "keywords": [
     "splide",
     "slider",

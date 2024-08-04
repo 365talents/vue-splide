@@ -5,12 +5,12 @@ import babel from '@rollup/plugin-babel';
 
 export default defineConfig( {
   build: {
-		lib: {
-			name    : 'VueSplide',
-			entry   : './src/js/build/iife.ts',
+    lib: {
+      name    : 'VueSplide',
+      entry   : './src/js/build/iife.ts',
       formats : [ 'iife' ],
-			fileName: format => `js/vue-splide.min.js`,
-		},
+      fileName: format => `js/vue-splide.min.js`,
+    },
     rollupOptions: {
       external: [ 'vue' ],
       output: {
@@ -21,14 +21,14 @@ export default defineConfig( {
       plugins: [
         babel( {
           configFile  : './.babelrc',
-          include: [ './src/**'],
+          include: [ './src/**' ],
         } ),
       ],
     },
     // Preserves the global variable name.
     minify: 'terser',
     emptyOutDir: false,
-	},
+  },
   plugins: [
     vue(),
   ],
