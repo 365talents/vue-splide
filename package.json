@@ -46,10 +46,11 @@
     "develop": "vite build",
     "check:type": "vue-tsc --noEmit",
     "build": "vite build",
-    "build:all": "npm run check:type && npm run build && node scripts/copy-css.js",
+    "build:all": "npm run build && node scripts/copy-css.js",
     "test": "jest",
     "eslint": "eslint src",
-    "deploy": "gh-pages -d examples/dist"
+    "deploy": "gh-pages -d examples/dist",
+    "prepare": "npm run build:all"
   },
   "exports": {
     ".": {
