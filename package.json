@@ -8,6 +8,9 @@
   "module": "dist/vue-splide.mjs",
   "types": "dist/index.d.ts",
   "packageManager": "pnpm@9.4.0",
+  "files": [
+    "dist"
+  ],
   "keywords": [
     "splide",
     "slider",
