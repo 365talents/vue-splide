@@ -1,37 +1,32 @@
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
-
+import dts from 'vite-plugin-dts';
+import { resolve } from "path";
 
 export default defineConfig( {
+  plugins: [
+    vue(),
+    dts( {
+      include: [
+        resolve( __dirname, "src/js/index.ts" ),
+        resolve( __dirname, "src/js/components/**/*.vue" ),
+        resolve( __dirname, "src/js/plugin/plugin.ts" ),
+      ],
+    } ),
+  ],
   build: {
-		lib: {
-			name    : 'VueSplide',
-			entry   : './src/js/index.ts',
-      formats : [ 'es', 'cjs' ],
-			fileName: format => {
-        let suffix: string = format;
-
-        if ( format === 'es' ) {
-          suffix = 'esm';
-        }
-
-        return `js/vue-splide.${ suffix }.js`;
-      },
-		},
-    emptyOutDir: false,
-    watch: {
-			include: 'src/**'
-		},
+    lib: {
+      name   : 'VueSplide',
+      entry   : resolve( __dirname, "src/js/index.ts" ),
+      fileName: 'vue-splide',
+    },
     rollupOptions: {
       external: [ 'vue' ],
       output: {
         globals: {
           vue: 'Vue',
         },
-        exports: 'named',
       },
     },
-    minify: false,
-	},
-  plugins: [ vue() ],
+  },
 } );

@@ -7,10 +7,7 @@
     "esModuleInterop": true,
     "module": "esnext",
     "moduleResolution": "node",
-    "declarationDir": "./dist/types",
     "declaration": true,
-    "declarationMap": true,
-    "mapRoot": "./",
     "skipLibCheck": true,
     "lib": [
       "esnext",
@@ -24,6 +21,7 @@
   ],
   "exclude": [
     "node_modules",
-    "src/js/**/*.test.ts"
+    "src/js/**/*.test.ts",
+    "dist"
   ]
 }

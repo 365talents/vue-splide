@@ -16,7 +16,8 @@
     "browser": true
   },
   "ignorePatterns": [
-    "*.esm.js"
+    "*.esm.js",
+    "dist"
   ],
   "rules": {
     "semi": [
